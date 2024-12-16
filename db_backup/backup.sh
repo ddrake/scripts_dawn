@@ -9,6 +9,6 @@ else
     find $BKPATH -mtime +8 -exec rm {} \;
     # Backup and gzip database
     TODAY=`date -I`
-    FILEPATH=$BKPATH/dawn_$TODAY.gz
+    FILEPATH=$BKPATH/dawn_$TODAY.sql.gz
     pg_dump -U $DB_USER  -h $DB_HOST -p $DB_PORT $DB_DATABASE | gzip > $FILEPATH
 fi
